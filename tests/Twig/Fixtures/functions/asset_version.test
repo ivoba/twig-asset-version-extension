@@ -1,0 +1,13 @@
+--TEST--
+"asset_version" function
+--TEMPLATE--
+{{ asset_versioned(file1) }}
+{{ asset_versioned(file2) }}
+--DATA--
+return array(
+'file1' => 'composer.json',
+'file2' => '/composer.json',
+)
+--EXPECT--
+composer.c67eaead8b04.json
+/composer.c67eaead8b04.json
