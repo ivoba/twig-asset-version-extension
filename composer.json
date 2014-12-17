@@ -1,11 +1,12 @@
 {
   "name": "ivoba/twig-asset-version-extension",
-  "type": "twig extension",
+  "type": "twig-extension",
   "keywords": [
     "assets",
     "cachebuster",
     "twig"
   ],
+  "license": "MIT",
   "authors": [
     {
       "name": "Ivo Bathke",
