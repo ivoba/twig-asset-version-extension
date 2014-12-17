@@ -35,12 +35,37 @@ For nginx:
 ## Integration
 
 ### Silex:
-todo
+Register the Twig Extension:  
+
+    $app['twig'] = $app->share($app->extend('twig', function ($twig, $app) {
+        $twig->addExtension(new \Ivoba\AssetVersion\Twig\AssetVersionExtension(new \Ivoba\AssetVersion\Version\Md5ContentAssetVersion(),
+                                                                               new \Ivoba\AssetVersion\Namer\DefaultNamer(),
+                                                                                __DIR__. '/../web'));
+        return $twig;
+    }));
+
 ### Symfony: 
-todo
+Add this in your services.xml:
+
+    <service id="ivoba_asset_version.version.md5_content"
+             class="Ivoba\AssetVersion\Version\Md5ContentAssetVersion">
+    </service>
+    <service id="ivoba_asset_version.namer.default"
+             class="Ivoba\AssetVersion\Namer\DefaultNamer">
+    </service>
+    <service id="ivoba_asset_version.twig.asset_version_extension"
+             class="Ivoba\AssetVersion\Twig\AssetVersionExtension">
+        <argument type="service" id="ivoba_asset_version.version.md5_content"/>
+        <argument type="service" id="ivoba_asset_version.namer.default"/>
+        <argument>%asset_dir%</argument>
+        <tag name="twig.extension"/>
+    </service>
 
 ## Extend
-todo
+You can create your own Version or Namer class by implementing their resp. interfaces and pass them to the extension.  
+F.e if you prefer timestamp as version or a different pattern in the filename.
+
+In the Extension you can add options as 4th parameter, as for now it only offers options['asset.directory'], as standard directory for assets.
 
 ## Credits
 
