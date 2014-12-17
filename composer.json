@@ -1,5 +1,5 @@
 {
-  "name": "twig-asset-version-extension",
+  "name": "ivoba/twig-asset-version-extension",
   "type": "twig extension",
   "keywords": [
     "assets",

@@ -2,6 +2,8 @@
 
 Render versioned asset filenames in twig.  
 
+[![Build Status](https://secure.travis-ci.org/ivoba/twig-asset-version-extension.png?branch=master)](http://travis-ci.org/ivoba/twig-asset-version-extension)
+
 ## Install
 
 Use composer:
@@ -36,3 +38,14 @@ For nginx:
 todo
 ### Symfony: 
 todo
+
+## Extend
+todo
+
+## Credits
+
+Read more about the idea:  
+
+[http://www.particletree.com/notebook/automatically-version-your-css-and-javascript-files/](http://www.particletree.com/notebook/automatically-version-your-css-and-javascript-files/)
+
+[http://www.bephpug.de/folien/asset_fingerprinting_with_php_demo_2012-08-07.pdf](http://www.bephpug.de/folien/asset_fingerprinting_with_php_demo_2012-08-07.pdf)
